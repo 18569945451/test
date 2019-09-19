@@ -1,2 +1,2 @@
 <?php
-echo 12121;exit;
+echo 12121;
