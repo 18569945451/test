@@ -11,9 +11,12 @@
 |
 */
 //api重定向路由
-Route::get('/apidoc-json/{version?}/{client?}', '\App\Api\ApidocController@getJson');
+Route::get('/apidoc-json/{version?}/{client?}', '\App\Api\ApiDocController@getJson');
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('test','\App\Http\Controllers\TestController@index');
+Route::get('test/{id?}','\App\Http\Controllers\TestController@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

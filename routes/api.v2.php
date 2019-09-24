@@ -20,6 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=>['auth:api']],function(){
 
-    Route::get('v1/test','\App\Api\V1\Test\Controllers\TestController@index');
+    Route::get('v2/test','\App\Api\V2\Test\Controllers\TestController@index');
 });
 

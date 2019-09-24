@@ -3,7 +3,6 @@ namespace app\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
-use Swagger\Annotations\Swagger;
 
 class ApiDocController extends Controller
 {
