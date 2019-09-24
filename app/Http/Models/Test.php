@@ -8,8 +8,9 @@ class Test extends Model
         'id', 'name'
     ];
 
-    public function comments()
+/*    public function comments()
     {
-        return $this->hasMany('App\Http\Models\Hover','uid','id');
-    }
+        //一对多
+        return $this->hasMany('App\Http\Models\hobby','uid','id');
+    }*/
 }

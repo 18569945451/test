@@ -1,5 +1,5 @@
 <?php
-namespace app\Api\V1\Test\Controllers;
+namespace app\Api\V2\Test\Controllers;
 
 use App\Services\WebServices\TestServices;
 use App\Http\Controllers\Controller;
@@ -16,11 +16,11 @@ class TestController extends Controller
     }
 
     /**
-     * @SWG\Swagger( @SWG\Info( title="Test", version="v1" ) )
+     * @SWG\Swagger( @SWG\Info( title="Test", version="v2" ) )
      */
     /**
-     * @SWG\Get(path="/index.php/api/v1/test",
-     *   tags={"我的测试接口"},
+     * @SWG\Get(path="/index.php/api/v2/test",
+     *   tags={"我的测试接口1"},
      *   summary="周期任务列表",
      *   description="周期任务列表",
      *   @SWG\Parameter(in="query",  name="project_id",  type="integer", default="",description="项目ID", required=true),
@@ -34,7 +34,7 @@ class TestController extends Controller
 
     public function index(Request $request)
     {
-        print_r($request->all());
+        echo 'V2';
     }
 
 

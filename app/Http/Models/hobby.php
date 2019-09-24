@@ -4,10 +4,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hover extends Model
 {
-    protected $table = 'hover';
+    protected $table = 'hobby';
 
     protected $fillable = [
-        'uid', 'hover'
+        'uid', 'hobby'
     ];
 
 }
