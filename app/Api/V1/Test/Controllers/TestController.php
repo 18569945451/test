@@ -34,7 +34,7 @@ class TestController extends Controller
 
     public function index(Request $request)
     {
-        print_r($request->all());
+        echo 'V1';
     }
 
 
