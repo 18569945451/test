@@ -26,9 +26,9 @@ class TestServices
     public function create(Request $request)
     {
 
-       /* $token =auth('users')->attempt(['id'=>2]);
+        $token =auth('api')->attempt(['id'=>2]);
         print_r($token);exit;
-        $result = true;*/
+        $result = true;
 
         /*if ($result){
 
