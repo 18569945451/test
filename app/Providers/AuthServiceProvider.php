@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Tymon\JWTAuth\JWTGuard;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -17,7 +19,7 @@ class AuthServiceProvider extends ServiceProvider
     ];
 
     /**
-     * Register any authentication / authorization services.
+     * 注册任意应用认证／授权服务。
      *
      * @return void
      */
@@ -25,5 +27,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
         //
+
+        Auth::extend('jwt', function ($app, $name, array $config) {
+            // 返回一个 Illuminate\Contracts\Auth\Guard 实例...
+            return new JWTGuard(Auth::createUserProvider($config['provider']));
+        });
     }
 }

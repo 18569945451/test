@@ -11,12 +11,19 @@
 |
 */
 //api重定向路由
+use Illuminate\Support\Facades\Route;
+
 Route::get('/apidoc-json/{version?}/{client?}', '\App\Api\ApiDocController@getJson');
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('test/{id?}','\App\Http\Controllers\TestController@index');
+Route::group(['middleware'=>['auth:web']],function(){
+
+    Route::get('/test','\App\Http\Controllers\TestController@index');
+
+    Route::get('/home', 'HomeController@index')->name('home');
+});
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
