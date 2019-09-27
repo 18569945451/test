@@ -1,9 +1,11 @@
 <?php
 namespace app\Api\V1\Test\Controllers;
 
-use App\Services\WebServices\TestServices;
+use App\Api\V1\Test\Entities\Test;
+use App\Api\V1\Test\Services\TestServices;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Prettus\Validator\Exceptions\ValidatorException;
 
 class TestController extends Controller
 {
@@ -19,23 +21,32 @@ class TestController extends Controller
      * @SWG\Swagger( @SWG\Info( title="Test", version="v1" ) )
      */
     /**
-     * @SWG\Get(path="/index.php/api/v1/test",
-     *   tags={"我的测试接口"},
-     *   summary="周期任务列表",
-     *   description="周期任务列表",
-     *   @SWG\Parameter(in="query",  name="project_id",  type="integer", default="",description="项目ID", required=true),
-     *   @SWG\Parameter(in="header",  name="content-type",  type="string",  description="application/x-www-form-urlencoded", default="application/x-www-form-urlencoded",required=true),
-     *   @SWG\Parameter(in="header",  name="accept",  type="string", default="application/json",required=true),
-     *   @SWG\Parameter(in="header",  name="Authorization",  type="string", default="Bearer ",required=true),
+     * @SWG\Post(path="/index.php/api/v1/test",
+     *   tags={"delicacy/merchant"},
+     *   summary="商户注册",
+     *   description="商户注册",
+     *   operationId="register",
+     *   consumes={"multipart/form-data"},
+     *   @SWG\Parameter(in="formData",  name="name",type="string",  description="名称", required=true),
+     *   @SWG\Parameter(in="formData",  name="password",type="string",  description="密码", required=true),
+     *   @SWG\Parameter(in="formData",  name="email",type="string",  description="邮箱", required=true),
+     *   @SWG\Parameter(in="formData",  name="photo[0]",type="file",  description="头像", required=true),
+     *   @SWG\Parameter(in="formData",  name="photo[1]",type="file",  description="头像", required=true),
+     *   @SWG\Parameter(in="header",  name="Authorization",  type="string",  description="Token 前面需要加：'bearer '",required=true),
+     *   @SWG\Parameter(in="header",  name="Content-Type",  type="string",  description="application/x-www-form-urlencoded", default="application/x-www-form-urlencoded",required=true),
      *   @SWG\Response(response="403", description="无权限"),
      *   @SWG\Response(response="500", description=""),
      * )
      */
-
-    public function index(Request $request)
+    public function create(Request $request)
     {
-        echo 'V1';
-    }
+        try{
+            $data = $this->service->create($request);
+            return apiReturn($data);
+        }catch (ValidatorException $e){
+            return apiReturn([], 403, $e->getMessageBag()->first());
+        }
 
+    }
 
 }

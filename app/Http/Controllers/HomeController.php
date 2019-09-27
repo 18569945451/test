@@ -24,7 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //print_r(Auth::user()->getRememberToken());exit;
         return view('home');
     }
 
