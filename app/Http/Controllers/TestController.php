@@ -1,33 +1,96 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use App\Services\WebServices\TestServices;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
 
-    public $service;
+    protected $service;
 
     public function __construct()
     {
         $this->service = new TestServices();
     }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $request)
     {
-        $credentials = ['email'=>'test@qq.com','password'=>123456789];
-        //$credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            echo 111111111;exit;
-            // 身份验证通过...
-            return redirect()->intended('test');
+        //
+        if ($request->wantsJson()){
+            return $this->service->search();
         }
-        $data = $this->service->test($request);
-        echo '<pre>';
-        print_r($data);
-        echo '<pre>';
+        return view('goods.index');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
