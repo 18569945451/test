@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Admin;
-use App\Models\Role;
+use App\Http\Models\Admin;
+use App\Http\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use validate;

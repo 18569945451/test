@@ -15,7 +15,7 @@ class TestServices
 
     public function __construct()
     {
-        $this->model = new Test();
+        //$this->model = new Test();
     }
 
     /**
@@ -25,7 +25,6 @@ class TestServices
      */
     public function create(Request $request)
     {
-
         $token =auth('api')->attempt(['id'=>2]);
         print_r($token);exit;
         $result = true;
@@ -37,7 +36,7 @@ class TestServices
         $this->model->name      = $request->name;
         $this->model->email     = $request->email;
         $this->model->password  = Hash::make($request->password);
-        $this->model->api_token = Str::random(60);
+        $this->model->api_token     = Str::random(60);
         $this->model->photo     = Collection::make($request->file('photo'))->map(function ($item){
                     return saveImageResource($item);
         });
