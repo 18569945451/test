@@ -25,7 +25,7 @@ class TestController extends Controller
         if ($request->wantsJson()){
             return $this->service->search();
         }
-        return view('goods.index');
+        return view('Permission.index');
     }
 
     /**

@@ -138,9 +138,9 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="/merchant/info"><i class="fa fa-circle-o"></i> Merchant Info</a>
+                        <li class="active"><a href="/permission/myrole"><i class="fa fa-circle-o"></i>permission role</a>
                         </li>
-                        <li><a href="/goods"><i class="fa fa-circle-o"></i> Goods List</a></li>
+                        <li><a href="/permission"><i class="fa fa-circle-o"></i>permission List</a></li>
                         <li><a href="/reserve"><i class="fa fa-circle-o"></i> Reserve</a></li>
                     </ul>
                 </li>

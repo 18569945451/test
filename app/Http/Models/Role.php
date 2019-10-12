@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,6 +16,7 @@ class Role extends Model
         'name', 'display', 'created_at', 'updated_at', 'deleted_at',
     ];
     public function permissions(){
+
         return $this->belongsToMany(Permission::class);
     }
     public function admins(){
