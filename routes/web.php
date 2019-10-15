@@ -16,16 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/apidoc-json/{version?}/{client?}', '\App\Api\ApiDocController@getJson');
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
-Route::group(['middleware'=>['auth','web']],function($route){
+
+Route::group(['middleware'=>['auth']],function($route){
 
     //Permission
     $route->resource('permission', 'PermissionController');
     $route->post('permission/add', 'PermissionController@add');//添加处理
     $route->post('permission/edit/{id}', 'PermissionController@edit_dispose');//修改处理
     $route->get('permission/show/{id}', 'PermissionController@show_list');//展示页面
-    $route->get('permission/myrole', 'PermissionController@myrole');//
+
+    //role
+    $route->resource('role', 'RoleController');
+    $route->post('role/add', 'RoleController@add');//添加处理
 
     Route::get('/home', 'PermissionController@index')->name('home');
     Route::resource('test','TestController',['names'=>[

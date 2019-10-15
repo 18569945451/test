@@ -8,19 +8,17 @@
 
 namespace App\Services\WebServices;
 
-use App\Http\Models\Permission;
-use App\Transformers\Goods\GoodsShowTransformer;
-use App\Transformers\Goods\GoodsListTransformer;
+use App\Http\Models\Role;
 use Illuminate\Database\QueryException;
 use Illuminate\Validation\ValidationException;
 
-class PermissionService
+class RoleService
 {
     public $model;
 
     public function __construct()
     {
-        $this->model = new Permission();
+        $this->model = new Role();
     }
 
     /**
@@ -58,9 +56,11 @@ class PermissionService
      */
     public function add($request)
     {
-            $this->model->permissions = $request->permissions;
-            $this->model->save();
-            return true;
+
+        $this->model->name = $request->name;
+        $this->model->display = Role::$status[$request->display];
+        $this->model->save();
+        return true;
     }
 
     /**

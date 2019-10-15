@@ -103,7 +103,7 @@
                 formatter:function(id){
                    return `<button type="button" onclick="edit(${id})" class="btn btn-info btn-sm">Edit</button>`
                     +`<button type="button" style="margin-left: 5px" onclick="destroy(${id})" class="btn btn-danger btn-sm">Delete</button>`
-                    +`<button type="button" style="margin-left: 5px" onclick="show(${id})" class="btn btn-primary btn-sm">Show</button>`
+                    //+`<button type="button" style="margin-left: 5px" onclick="show(${id})" class="btn btn-primary btn-sm">Show</button>`
                 }
             }]
         });

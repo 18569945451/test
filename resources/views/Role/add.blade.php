@@ -43,48 +43,40 @@
             <div class="col-xs-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title" style="color: red;font-size: 26px;font-weight: bold;">Add permissions</h3>
+                        <h3 class="box-title" style="color: red;font-size: 26px;font-weight: bold;">Add Role</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <form role="form" method="post" action="{{url('permission/add')}}" id="merchant_add" enctype="multipart/form-data">
+                        <form role="form" method="post" action="{{url('role/add')}}" id="merchant_add" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{csrf_token()}}" />
                             <!-- text input -->
-                            <div class="form-group @if($errors->has('permissions'))has-error @endif">
-                                @if($errors->has('permissions')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>permissions Name</label>@else<label>permissions Name</label>@endif
-                                <input type="text" name="permissions" class="form-control" placeholder="permissions.">
-                                @if($errors->has('permissions')) <span class="help-block">{{$errors->first('permissions') }}</span> @endif
+                            <div class="form-group @if($errors->has('name'))has-error @endif">
+                                @if($errors->has('name')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> Name</label>@else<label> Name</label>@endif
+                                <input type="text" name="name" class="form-control" placeholder="name.">
+                                @if($errors->has('name')) <span class="help-block">{{$errors->first('name') }}</span> @endif
                             </div>
-                            {{--<div class="form-group @if($errors->has('images'))has-error @endif">
-                                @if($errors->has('images')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>Goods Image</label>@else<label>Goods Image</label>@endif
-                                    <div class="fileinput fileinput-new" data-provides="fileinput" id="uploadImageDiv">
-                                        <div class="fileinput-new thumbnail" id="prompt" style="width: 200px; height: 150px;">
-                                            <img src="" alt="" id="img" style="width: 200px;height: 140px" />
-                                        </div>
-                                        <span class="btn default btn-file">
-                                                <span class="fileinput-new btn btn-warning btn-sm">Add</span>
-                                                <input type="file" onchange="changepic(this)" accept="image/jpg,image/jpeg,image/png,image/PNG" name="images" id="images" />
-                                            </span>
-                                        <a href="#" class="btn btn-danger btn-sm" onclick="deleteimg(this)" data-dismiss="fileinput">Remove</a>
-                                    </div>
-                                @if($errors->has('images')) <span class="help-block">{{$errors->first('images') }}</span> @endif
-                            </div>
-                            <div class="form-group @if($errors->has('price'))has-error @endif">
-                                @if($errors->has('price')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>Goods Price</label>@else<label>Goods Price</label>@endif
-                                <input type="text" name="price" class="form-control" placeholder="Please enter the name of the goods.">
-                                @if($errors->has('price')) <span class="help-block">{{$errors->first('price') }}</span> @endif
-                            </div>--}}
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="radio" name="display" value="1">
+                                        管理员
+                                    </label>
+                                </div>
 
-                           {{-- <div class="form-group @if($errors->has('category_id'))has-error @endif">
-                                @if($errors->has('category_id')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>Select Category</label>@else<label>Select Category</label>@endif
-                                    <select name="category_id" id="category_id" class="form-control">
-                                        <option value="0">Please Select</option>
-                                        @foreach($category as $val)
-                                            <option value="{{$val->id}}">{{$val->name}}</option>
-                                        @endforeach
-                                    </select>
-                                @if($errors->has('category_id')) <span class="help-block">{{$errors->first('category_id') }}</span> @endif
-                            </div>--}}
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="radio" name="display" value="2">
+                                        写入者
+                                    </label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="radio" name="display" value="3">
+                                        读者
+                                    </label>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     <!-- /.box-body -->

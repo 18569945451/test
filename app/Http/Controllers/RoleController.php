@@ -1,23 +1,80 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Models\Admin;
-use App\Http\Models\Role;
-use App\Services\WebServices\PermissionService;
-
+use App\Services\WebServices\RoleService;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Validation\ValidationException;
 
 
 class RoleController extends Controller
 {
-    //角色列表
-    public function  index(){
-        $data = Role::latest()->get();
-        return view('admin.role.index',compact('data'));
+    public function __construct()
+    {
+        $this->service = new RoleService();
     }
-    //创建角色
+
+    /**
+     *
+     * @param Request $request
+     * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index(Request $request)
+    {
+        if ($request->wantsJson()){
+            return $this->service->search();
+        }
+        return view('Role.index');
+    }
+
+
+    /**
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function create()
+    {
+        return view('Role.add');
+    }
+
+    /**
+     *
+     * @param  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function add(Request $request)
+    {
+        $this->service->add($request);
+        return redirect('/role/create')->withInput(['status'=>1]);
+    }
+
+    /**
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($id)
+    {
+        $data = $this->service->showData($id);
+        return view('Permission.edit',compact('data'));
+    }
+
+
+    public function edit_dispose(Request $request,$id)
+    {
+        try{
+            $this->service->edit($request,$id);
+            return redirect('/permission/'.$id)->withInput(['status'=>1]);
+        }catch (ValidationException $exception){
+            return apiReturn([],403,$exception->getMessage());
+        }
+
+    }
+
+
+
+
+   /* //创建角色
     public  function  create(){
         $routes_groups = PermissionService::getAdminRoutesGroups();
 //        dd($routes_groups);
@@ -104,6 +161,6 @@ class RoleController extends Controller
         }
 
         return $routes_groups;
-    }
+    }*/
 
 }

@@ -43,52 +43,18 @@
             <div class="col-xs-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title" style="color: red;font-size: 26px;font-weight: bold;">Edit Goods</h3>
+                        <h3 class="box-title" style="color: red;font-size: 26px;font-weight: bold;">Edit permissions</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <form role="form" id="merchant_edit" method="post" action="{{url('goods/edit',$data->id)}}" enctype="multipart/form-data">
+                        <form role="form" id="merchant_edit" method="post" action="{{url('permission/edit',$data['id'])}}" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                             <!-- text input -->
-                            <div class="form-group @if($errors->has('name'))has-error @endif">
-                                @if($errors->has('name')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>Goods Name</label>@else<label>Goods Name</label>@endif
-                                <input type="text" name="name" class="form-control" value="{{$data->name}}">
-                                @if($errors->has('name')) <span class="help-block">{{$errors->first('name') }}</span> @endif
+                            <div class="form-group @if($errors->has('permissions'))has-error @endif">
+                                @if($errors->has('permissions')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>permissions Name</label>@else<label>permissions Name</label>@endif
+                                <input type="text" name="permissions" class="form-control" value="{{$data['permissions']}}">
+                                @if($errors->has('permissions')) <span class="help-block">{{$errors->first('permissions') }}</span> @endif
                             </div>
-
-                            <div class="form-group @if($errors->has('images'))has-error @endif">
-                                @if($errors->has('images')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>Goods Image</label>@else<label>Goods Image</label>@endif
-                                <div class="fileinput fileinput-new" data-provides="fileinput" id="uploadImageDiv">
-                                    <div class="fileinput-new thumbnail" id="prompt" style="width: 200px; height: 150px;">
-                                        <img src="{{$data->images}}" alt="" id="img" style="width: 200px;height: 140px" />
-                                    </div>
-                                    <span class="btn default btn-file">
-                                                <span class="fileinput-new btn btn-warning btn-sm">Update</span>
-                                                <input type="file" onchange="changepic(this)" accept="image/jpg,image/jpeg,image/png,image/PNG" name="images" id="images" />
-                                            </span>
-                                </div>
-                                @if($errors->has('images')) <span class="help-block">{{$errors->first('images') }}</span> @endif
-                            </div>
-
-                            <div class="form-group @if($errors->has('price'))has-error @endif">
-                                @if($errors->has('price')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>Goods Price</label>@else<label>Goods Price</label>@endif
-                                <input type="text" name="price" class="form-control" value="{{$data->price}}">
-                                @if($errors->has('price')) <span class="help-block">{{$errors->first('price') }}</span> @endif
-                            </div>
-
-                            {{--<div class="form-group @if($errors->has('category_id'))has-error @endif">
-                                @if($errors->has('category_id')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>Select Category</label>@else<label>Select Category</label>@endif
-                                <select name="category_id" id="category_id" class="form-control">
-                                    @foreach($category as $val)
-                                        @if($data->category_id == $val->id )
-                                            <option value="{{$val->id}}" selected>{{$val->name}}</option>
-                                        @else
-                                            <option value="{{$val->id}}">{{$val->name}}</option>
-                                        @endif
-                                    @endforeach
-                                </select>
-                                @if($errors->has('category_id')) <span class="help-block">{{$errors->first('category_id') }}</span> @endif
-                            </div>--}}
                         </form>
                     </div>
                     <!-- /.box-body -->
