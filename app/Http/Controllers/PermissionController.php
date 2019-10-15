@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Services\WebServices\PermissionService;
 use Illuminate\Http\Request;
-use App\Http\Models\Role;
-
 use Illuminate\Validation\ValidationException;
 
 class PermissionController extends Controller
@@ -66,39 +64,24 @@ class PermissionController extends Controller
         return view('Permission.edit',compact('data'));
     }
 
-    /**
-     * 美食修改处理(自建路由)
-     * @param Request $request
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function edit_dispose(EditGoodsRequest $request,$id)
+
+    public function edit_dispose(Request $request,$id)
     {
         try{
             $this->service->edit($request,$id);
-            return redirect('/Permission/'.$id)->withInput(['status'=>1]);
+            return redirect('/permission/'.$id)->withInput(['status'=>1]);
         }catch (ValidationException $exception){
             return apiReturn([],403,$exception->getMessage());
         }
 
     }
 
-    /**
-     * 美食show(自建路由)
-     * @param $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
     public function show_list($id)
     {
         $data = $this->service->showList($id);
         return view('Permission.show',compact('data'));
     }
 
-    /**
-     * 美食删除处理
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function destroy($id)
     {
         try{
@@ -110,10 +93,4 @@ class PermissionController extends Controller
 
     }
 
-    public function myrole()
-    {
-        echo "已经进行到此处";exit;
-        $roles = Role::get(); // 获取所有角色
-        return view('Role.index')->with('roles', $roles);
-    }
 }

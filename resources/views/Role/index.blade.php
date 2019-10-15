@@ -9,9 +9,9 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>Permission List</h1>
+            <h1>Role List</h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Permission List</a></li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> Role List</a></li>
             </ol>
         </section>
 
@@ -45,7 +45,7 @@
     //初始化bootstrap-table的内容
     function initMainTable () {
         //记录页面bootstrap-table全局变量table，方便应用
-        var queryUrl = '/permission';
+        var queryUrl = '/role';
         table = $('#table').bootstrapTable({
             url: queryUrl,                      //请求后台的URL（*）
             method: 'GET',                      //请求方式（*）
@@ -86,8 +86,12 @@
                 title: 'ID',
                 sortable: true
             }, {
-                field: 'permissions',
-                title: 'Permission',
+                field: 'name',
+                title: 'name',
+                sortable: false
+            },{
+                field: 'display',
+                title: 'display',
                 sortable: false
             },{
                 field: 'created_at',
@@ -103,7 +107,7 @@
                 formatter:function(id){
                    return `<button type="button" onclick="edit(${id})" class="btn btn-info btn-sm">Edit</button>`
                     +`<button type="button" style="margin-left: 5px" onclick="destroy(${id})" class="btn btn-danger btn-sm">Delete</button>`
-                    +`<button type="button" style="margin-left: 5px" onclick="show(${id})" class="btn btn-primary btn-sm">Show</button>`
+                    //+`<button type="button" style="margin-left: 5px" onclick="show(${id})" class="btn btn-primary btn-sm">Show</button>`
                 }
             }]
         });
@@ -113,7 +117,7 @@
     $('#add').click(function(){
         layer.open({
             type: 2,
-            title: 'Add Goods',
+            title: 'Add role',
             shadeClose: true,
             shade: 0.8,
             area: ['60%', '60%'],
@@ -122,7 +126,7 @@
                 var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
                 iframeWin.merchantAdd();
             },
-            content: '/permission/create'
+            content: '/role/create'
         });
     });
     //编辑

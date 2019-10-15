@@ -138,7 +138,7 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="/permission/myrole"><i class="fa fa-circle-o"></i>permission role</a>
+                        <li class="active"><a href="/role"><i class="fa fa-circle-o"></i>permission role</a>
                         </li>
                         <li><a href="/permission"><i class="fa fa-circle-o"></i>permission List</a></li>
                         <li><a href="/reserve"><i class="fa fa-circle-o"></i> Reserve</a></li>
