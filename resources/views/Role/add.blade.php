@@ -55,27 +55,26 @@
                                 <input type="text" name="name" class="form-control" placeholder="name.">
                                 @if($errors->has('name')) <span class="help-block">{{$errors->first('name') }}</span> @endif
                             </div>
+
+                            <div class="form-group @if($errors->has('display_name'))has-error @endif">
+                                @if($errors->has('display_name')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> display_name</label>@else<label> display_name</label>@endif
+                                <input type="text" name="display_name" class="form-control" placeholder="display_name.">
+                                @if($errors->has('display_name')) <span class="help-block">{{$errors->first('display_name') }}</span> @endif
+                            </div>
+                            <div class="form-group @if($errors->has('description'))has-error @endif">
+                                @if($errors->has('description')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> description</label>@else<label> description</label>@endif
+                                <input type="text" name="description" class="form-control" placeholder="description.">
+                                @if($errors->has('description')) <span class="help-block">{{$errors->first('description') }}</span> @endif
+                            </div>
                             <div class="form-group">
+                                @foreach($data as $key=>$val)
                                 <div class="checkbox">
                                     <label>
-                                        <input type="radio" name="display" value="1">
-                                        管理员
+                                        <input type="checkbox" name="permissions_id[]" value="{{$val->id}}">
+                                        {{$val->display_name}}
                                     </label>
                                 </div>
-
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="radio" name="display" value="2">
-                                        写入者
-                                    </label>
-                                </div>
-
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="radio" name="display" value="3">
-                                        读者
-                                    </label>
-                                </div>
+                                @endforeach
                             </div>
                         </form>
                     </div>

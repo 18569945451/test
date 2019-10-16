@@ -1,17 +1,79 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Models\Admin;
-use App\Http\Models\Role;
+use App\Services\WebServices\AdminsService;
+use App\Services\WebServices\RoleService;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use validate;
+use Illuminate\Validation\ValidationException;
 
 
 class AdminController extends Controller
 {
-    //管理员列表
+    public function __construct()
+    {
+        $this->service = new AdminsService();
+    }
+
+    /**
+     *
+     * @param Request $request
+     * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index(Request $request)
+    {
+        if ($request->wantsJson()){
+            return $this->service->search();
+        }
+        return view('Admin.index');
+    }
+
+
+    /**
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function create()
+    {
+        $data =(new RoleService)->roleData();
+
+        return view('Admin.add',compact('data'));
+    }
+
+    /**
+     *
+     * @param  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function add(Request $request)
+    {
+        $this->service->add($request);
+        return redirect('/admin/create')->withInput(['status'=>1]);
+    }
+
+    /**
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($id)
+    {
+        $data = $this->service->showData($id);
+        return view('Admin.edit',compact('data'));
+    }
+
+
+    public function edit_dispose(Request $request,$id)
+    {
+        try{
+            $this->service->edit($request,$id);
+            return redirect('/Admin/'.$id)->withInput(['status'=>1]);
+        }catch (ValidationException $exception){
+            return apiReturn([],403,$exception->getMessage());
+        }
+
+    }
+    /*//管理员列表
     public  function index(){
         $search_items = [
             'name' => [
@@ -91,6 +153,6 @@ class AdminController extends Controller
         $data->roles()->detach();
         $data->delete();
         return back()->with('msg','删除成功!');
-    }
+    }*/
 
 }

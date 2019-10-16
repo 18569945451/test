@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\WebServices\RoleService;
+use App\Services\WebServices\PermissionService;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
@@ -34,7 +35,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('Role.add');
+        $data =(new PermissionService)->permissionData();
+        return view('Role.add',compact('data'));
     }
 
     /**

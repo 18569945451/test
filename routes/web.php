@@ -31,6 +31,11 @@ Route::group(['middleware'=>['auth']],function($route){
     $route->resource('role', 'RoleController');
     $route->post('role/add', 'RoleController@add');//添加处理
 
+    //admin
+    $route->resource('admin', 'AdminController');
+    $route->post('admin/add', 'AdminController@add');//添加处理
+
+
     Route::get('/home', 'PermissionController@index')->name('home');
     Route::resource('test','TestController',['names'=>[
         'index' => 'test list', // /test get

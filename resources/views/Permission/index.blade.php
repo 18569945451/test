@@ -85,9 +85,17 @@
                 field: 'id',
                 title: 'ID',
                 sortable: true
+            },{
+                field: 'name',
+                title: 'name',
+                sortable: true
             }, {
-                field: 'permissions',
-                title: 'Permission',
+                field: 'display_name',
+                title: 'display_name',
+                sortable: false
+            },{
+                field: 'description',
+                title: 'description',
                 sortable: false
             },{
                 field: 'created_at',

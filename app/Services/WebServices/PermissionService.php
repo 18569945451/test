@@ -1,16 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: wangxiao
+ * Admins: wangxiao
  * Date: 2019/9/27
  * Time: 11:17
  */
 
 namespace App\Services\WebServices;
 
-use App\Http\Models\Permission;
-use App\Transformers\Goods\GoodsShowTransformer;
-use App\Transformers\Goods\GoodsListTransformer;
+use App\Models\Permission;
 use Illuminate\Database\QueryException;
 use Illuminate\Validation\ValidationException;
 
@@ -58,11 +56,20 @@ class PermissionService
      */
     public function add($request)
     {
-            $this->model->permissions = $request->permissions;
+            $this->model->description = $request->description;
+            $this->model->display_name = $request->display_name;
+            $this->model->name = $request->name;
             $this->model->save();
             return true;
     }
 
+    /**
+     * 权限内容
+     */
+    public function permissionData()
+    {
+        return $this->model->get(['id','display_name']);
+    }
     /**
      *
      * @param $id
@@ -82,7 +89,9 @@ class PermissionService
     public function edit($request,$id)
     {
 
-        $data['permissions'] = $request->permissions;
+        $data['name'] = $request->name;
+        $data['display_name'] = $request->display_name;
+        $data['description'] = $request->description;
         $this->model->where('id',$id)->update($data);
         return true;
 

@@ -58,7 +58,7 @@
                             <span class="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <!-- User image -->
+                            <!-- Admins image -->
                             <li class="user-header">
                                 <img src="{{ asset('resources/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                                 <p>
@@ -138,10 +138,10 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="/role"><i class="fa fa-circle-o"></i>permission role</a>
+                        <li class="active"><a href="/role"><i class="fa fa-circle-o"></i>role</a>
                         </li>
-                        <li><a href="/permission"><i class="fa fa-circle-o"></i>permission List</a></li>
-                        <li><a href="/reserve"><i class="fa fa-circle-o"></i> Reserve</a></li>
+                        <li><a href="/permission"><i class="fa fa-circle-o"></i>permission</a></li>
+                        <li><a href="/admin"><i class="fa fa-circle-o"></i> Admin</a></li>
                     </ul>
                 </li>
                 <li>

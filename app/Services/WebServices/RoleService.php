@@ -1,17 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wangxiao
- * Date: 2019/9/27
- * Time: 11:17
- */
 
 namespace App\Services\WebServices;
 
-use App\Http\Models\Role;
+use App\Models\Role;
+use App\Models\permissionRole;
 use Illuminate\Database\QueryException;
 use Illuminate\Validation\ValidationException;
-
+use DB;
 class RoleService
 {
     public $model;
@@ -51,27 +46,53 @@ class RoleService
     }
 
     /**
-     * 权限添加
+     * 角色权限添加
      * @param $request
+     * @return bool
      */
     public function add($request)
     {
+        DB::beginTransaction();
+        try{
+            $data = [
+                'name' => $request->name,
+                'display_name' => $request->display_name,
+                'description' => $request->description,
+            ];
+            //todo 获取角色表插入的id
+            $insertId  = Role::insertGetId($data);
+            $data = [];
+            if ($insertId){
+                //todo 循环加入的权限id
+                foreach ($request->permissions_id as $key=>$item){
+                    $data[$key] = [
+                        'permission_id' => $item,
+                        'role_id' => $insertId,
+                    ];
+                }
 
-        $this->model->name = $request->name;
-        $this->model->display = Role::$status[$request->display];
-        $this->model->save();
-        return true;
+                //todo 把权限id 角色的id 插入到权限角色关联的表中（permission_role）
+                $role = permissionRole::insert($data);
+
+                if ($role){
+                    DB::commit();
+                    return true;
+                }
+            }
+
+        }catch (\Exception $e){
+
+            DB::rollback();//事务回滚
+            echo $e->getMessage();
+            echo $e->getCode();
+
+        }
+
     }
 
-    /**
-     *
-     * @param $id
-     * @return mixed
-     */
-    public function showData($id)
+    public function roleData()
     {
-        $data = $this->model->find($id);
-        return $data;
+        return $this->model->get(['id','display_name']);
     }
 
     /**

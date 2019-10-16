@@ -90,8 +90,12 @@
                 title: 'name',
                 sortable: false
             },{
-                field: 'display',
-                title: 'display',
+                field: 'display_name',
+                title: 'display_name',
+                sortable: false
+            },{
+                field: 'description',
+                title: 'description',
                 sortable: false
             },{
                 field: 'created_at',
