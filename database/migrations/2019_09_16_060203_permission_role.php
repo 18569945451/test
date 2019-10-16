@@ -14,7 +14,7 @@ class PermissionRole extends Migration
     public function up()
     {
         //
-        Schema::create('permission_role', function (Blueprint $table) {
+        Schema::create('permissionRole', function (Blueprint $table) {
             $table->string('permission_id')->comment('模块内容');
             $table->integer('role_id')->comment('角色id');
         });

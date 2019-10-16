@@ -50,10 +50,22 @@
                         <form role="form" id="merchant_edit" method="post" action="{{url('permission/edit',$data['id'])}}" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                             <!-- text input -->
-                            <div class="form-group @if($errors->has('permissions'))has-error @endif">
-                                @if($errors->has('permissions')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>permissions Name</label>@else<label>permissions Name</label>@endif
-                                <input type="text" name="permissions" class="form-control" value="{{$data['permissions']}}">
-                                @if($errors->has('permissions')) <span class="help-block">{{$errors->first('permissions') }}</span> @endif
+                            <div class="form-group @if($errors->has('name'))has-error @endif">
+                                @if($errors->has('name')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>Name</label>@else<label>Name</label>@endif
+                                <input type="text" name="name" class="form-control" value="{{$data['name']}}">
+                                @if($errors->has('name')) <span class="help-block">{{$errors->first('name') }}</span> @endif
+                            </div>
+
+                            <div class="form-group @if($errors->has('display_name'))has-error @endif">
+                                @if($errors->has('display_name')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>display Name</label>@else<label>display Name</label>@endif
+                                <input type="text" name="display_name" class="form-control" value="{{$data['display_name']}}">
+                                @if($errors->has('display_name')) <span class="help-block">{{$errors->first('display_name') }}</span> @endif
+                            </div>
+
+                            <div class="form-group @if($errors->has('description'))has-error @endif">
+                                @if($errors->has('description')) <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i>description</label>@else<label>description</label>@endif
+                                <input type="text" name="description" class="form-control" value="{{$data['description']}}">
+                                @if($errors->has('description')) <span class="help-block">{{$errors->first('description') }}</span> @endif
                             </div>
                         </form>
                     </div>

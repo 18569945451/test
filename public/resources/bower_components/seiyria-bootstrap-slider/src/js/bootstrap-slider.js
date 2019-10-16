@@ -713,7 +713,7 @@ const windowIsDefined = (typeof window === "object");
 				this._state.value = this.options.value;
 			}
 			else if (this.options.range) {
-				// User wants a range, but value is not an array
+				// Admins wants a range, but value is not an array
 				this._state.value = [this.options.value, this.options.max];
 			}
 			else {
