@@ -5,15 +5,17 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Cashier\Billable;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class Admins extends Authenticatable
 {
     use Notifiable;
     use EntrustUserTrait;
+    use Billable;
 
     protected $fillable = [
-        'name', 'email', 'password','mobile',
+        'name', 'email', 'password',
     ];
 
     protected $hidden = [

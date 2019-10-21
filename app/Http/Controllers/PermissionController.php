@@ -34,6 +34,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
+
         return view('Permission.add');
     }
 

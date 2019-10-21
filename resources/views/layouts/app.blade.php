@@ -145,8 +145,8 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/review">
-                        <i class="fa fa-glass"></i> <span>Rate Modular</span>
+                    <a href="/pay">
+                        <i class="fa fa-glass"></i> <span>Pay</span>
                     </a>
 
                 </li>

@@ -19,6 +19,15 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
+/*Route::group(['prefix' => 'admin','namespace' => 'Admin'],function ($router)
+{
+    $router->get('login', 'LoginController@showLogin')->name('admin.login');
+    $router->post('login', 'LoginController@login');
+    $router->post('logout', 'LoginController@logout');
+
+    $router->get('index', 'AdminController@index');
+});*/
+
 Route::group(['middleware'=>['auth']],function($route){
 
     //Permission
@@ -34,6 +43,15 @@ Route::group(['middleware'=>['auth']],function($route){
     //admin
     $route->resource('admin', 'AdminController');
     $route->post('admin/add', 'AdminController@add');//添加处理
+
+
+    $route->get('pay', 'PayController@index');//添加处理
+    $route->post('pay/edit', 'PayController@edit');//添加处理
+
+
+
+
+    $route->post('admin/index/index', 'AdminController@woc');
 
 
     Route::get('/home', 'PermissionController@index')->name('home');

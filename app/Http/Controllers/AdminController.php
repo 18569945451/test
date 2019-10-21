@@ -13,6 +13,7 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->service = new AdminsService();
+        $this->middleware('auth.admin:admin');
     }
 
     /**
