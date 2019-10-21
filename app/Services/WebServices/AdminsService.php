@@ -30,6 +30,10 @@ class AdminsService
     public function search()
     {
 
+        if (auth()->user()->can('admin.index.index')){
+            echo "已经进行到此处";exit;
+        }
+        echo "已经进行到此处啊啊啊啊啊啊啊啊啊啊啊啊啊";exit;
         $limit      = request('limit', 15);
         $offset     = (request('page', 1) - 1) * $limit;
         $orderField = request('sort', 'id');

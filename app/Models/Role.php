@@ -11,7 +11,9 @@ class Role extends EntrustRole
         'name',
         'display_name',
         'description',
-        'type'
+        'type',
+        'created_at',
+        'updated_at',
     ];
 
 }

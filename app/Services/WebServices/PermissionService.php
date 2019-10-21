@@ -8,7 +8,7 @@
 
 namespace App\Services\WebServices;
 
-use App\Models\Permission;
+use App\Permission;
 use Illuminate\Database\QueryException;
 use Illuminate\Validation\ValidationException;
 
@@ -41,7 +41,10 @@ class PermissionService
 
         $count = $condition->count();
         $data  = $condition->offset($offset)->limit($limit)->orderBy($orderField,$order)->get();
+        /*if (auth()->user()->can('admin.index.index')){
 
+            $data['woc'] = 11111111;
+        }*/
         return [
             'code'  => 0,
             'msg'   => '',
