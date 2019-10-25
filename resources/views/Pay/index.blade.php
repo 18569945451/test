@@ -12,15 +12,7 @@
 <!-- built files will be auto injected -->
 <form action="{{url('pay/edit')}}" method="POST">
     {{ csrf_field() }}
-    <script
-            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_wIAv7SdDJV2B6zPPUdnXnJCd"
-            data-amount="999"
-            data-name="Leoptique Inc."
-            data-description="Widget"
-            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-            data-locale="auto">
-    </script>
+    <input type="submit" value="提交订单">
 </form>
 </body>
 </html>

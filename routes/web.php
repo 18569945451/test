@@ -28,7 +28,7 @@ Route::get('/', function () {
     $router->get('index', 'AdminController@index');
 });*/
 
-Route::group(['middleware'=>['auth']],function($route){
+Route::group(['middleware'=>['auth:web']],function($route){
 
     //Permission
     $route->resource('permission', 'PermissionController');
@@ -44,9 +44,22 @@ Route::group(['middleware'=>['auth']],function($route){
     $route->resource('admin', 'AdminController');
     $route->post('admin/add', 'AdminController@add');//添加处理
 
+    //pay
+    $route->get('pay', 'PayController@index'); //订单页面
+    $route->post('pay/edit', 'PayController@edit');//创建订单
+    $route->get('pay/show', 'PayController@show');//付款页面
 
-    $route->get('pay', 'PayController@index');//添加处理
-    $route->post('pay/edit', 'PayController@edit');//添加处理
+    $route->get('success', 'PayController@success');
+    $route->post('checkout', 'PayController@checkout');
+    //绑定客户
+    $route->get('pay/create', 'PayController@create');
+    $route->get('pay/show', 'PayController@show');
+    $route->get('pay/list', 'PayController@showList');
+
+    //绑定银行卡
+    $route->get('card/binding', 'BankCardController@binding');
+    $route->get('card/list', 'BankCardController@list');
+    $route->get('card/edit', 'BankCardController@binding');
 
 
 

@@ -231,6 +231,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         /**
+         * API
+         */
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        /*'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,*/
+
+        /**
          * zizaco/entrust 权限控制
          */
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
