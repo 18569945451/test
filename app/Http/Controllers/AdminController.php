@@ -40,6 +40,7 @@ class AdminController extends Controller
         $data =(new RoleService)->roleData();
 
         return view('Admin.add',compact('data'));
+
     }
 
     /**

@@ -2,90 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48c6aa13-c765-4704-a9b2-5e4018b20628" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BankCardController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Transformers/BankCard/BankCardTransformer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/BankCard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/WebServices/BankCardService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/wy/css/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/wy/css/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/wy/locales/de.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/wy/locales/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/wy/locales/ms.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/wy/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/wy/translation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Pay/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Pay/index1.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Pay/pay.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Pay/success.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Api/V1/Test/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/V1/Test/Controllers/TestController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PayController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PayController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AdminAuthMiddleware.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admins.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/WebServices/AdminsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/WebServices/AdminsService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/jwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jwt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_24_084354_add_api_token_into_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_24_084354_add_api_token_into_users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/apidoc/swagger-ui-bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/apidoc/swagger-ui-bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/apidoc/swagger-ui-standalone-preset.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/apidoc/swagger-ui-standalone-preset.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/apidoc/swagger-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/apidoc/swagger-ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/Flot/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/Flot/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/bootstrap-datepicker/docs/_screenshots/script/html-imports.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/bootstrap-datepicker/docs/_screenshots/script/html-imports.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/bootstrap-datepicker/tests/assets/jquery-1.7.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/bootstrap-datepicker/tests/assets/jquery-1.7.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/bootstrap-daterangepicker/example/amd/require.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/bootstrap-daterangepicker/example/amd/require.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/bootstrap-daterangepicker/website/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/bootstrap-daterangepicker/website/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/ckeditor/ckeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/ckeditor/ckeditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/ckeditor/plugins/embedbase/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/ckeditor/plugins/embedbase/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/ckeditor/plugins/pastefromword/filter/default.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/ckeditor/plugins/pastefromword/filter/default.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/jquery/dist/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/jquery/dist/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/jquery/dist/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/jquery/dist/jquery.slim.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/jquery/dist/jquery.slim.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/jquery/src/ajax/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/jquery/src/ajax/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/jvectormap/tests/assets/jquery-1.8.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/jvectormap/tests/assets/jquery-1.8.2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/seiyria-bootstrap-slider/dependencies/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/seiyria-bootstrap-slider/dependencies/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/select2/tests/vendor/jquery-1.7.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/select2/tests/vendor/jquery-1.7.2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/select2/tests/vendor/jquery-2.2.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/select2/tests/vendor/jquery-2.2.4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/bower_components/select2/tests/vendor/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/bower_components/select2/tests/vendor/jquery-3.4.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/bootstrap-table-vue.esm.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/bootstrap-table-vue.esm.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/bootstrap-table-vue.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/bootstrap-table-vue.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/bootstrap-table.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/bootstrap-table.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/accent-neutralise/bootstrap-table-accent-neutralise.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/accent-neutralise/bootstrap-table-accent-neutralise.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/auto-refresh/bootstrap-table-auto-refresh.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/auto-refresh/bootstrap-table-auto-refresh.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/cell-input/bootstrap-table-cell-input.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/cell-input/bootstrap-table-cell-input.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/cookie/bootstrap-table-cookie.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/cookie/bootstrap-table-cookie.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/copy-rows/bootstrap-table-copy-rows.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/copy-rows/bootstrap-table-copy-rows.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/export/bootstrap-table-export.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/fixed-columns/bootstrap-table-fixed-columns.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/fixed-columns/bootstrap-table-fixed-columns.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/group-by-v2/bootstrap-table-group-by.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/group-by-v2/bootstrap-table-group-by.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/key-events/bootstrap-table-key-events.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/key-events/bootstrap-table-key-events.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/mobile/bootstrap-table-mobile.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/mobile/bootstrap-table-mobile.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/multiple-sort/bootstrap-table-multiple-sort.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/multiple-sort/bootstrap-table-multiple-sort.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/natural-sorting/bootstrap-table-natural-sorting.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/natural-sorting/bootstrap-table-natural-sorting.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/page-jump-to/bootstrap-table-page-jump-to.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/page-jump-to/bootstrap-table-page-jump-to.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/print/bootstrap-table-print.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/print/bootstrap-table-print.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/reorder-columns/bootstrap-table-reorder-columns.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/reorder-columns/bootstrap-table-reorder-columns.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/sticky-header/bootstrap-table-sticky-header.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/sticky-header/bootstrap-table-sticky-header.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/treegrid/bootstrap-table-treegrid.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/extensions/treegrid/bootstrap-table-treegrid.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/themes/bulma/bootstrap-table-bulma.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/themes/bulma/bootstrap-table-bulma.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/themes/foundation/bootstrap-table-foundation.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/themes/foundation/bootstrap-table-foundation.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/themes/materialize/bootstrap-table-materialize.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/themes/materialize/bootstrap-table-materialize.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/themes/semantic/bootstrap-table-semantic.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-table/themes/semantic/bootstrap-table-semantic.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/layui/lay/modules/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/layui/lay/modules/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/layui/lay/modules/mobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/layui/lay/modules/mobile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/plugins/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/plugins/layui/layui.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Pay/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Pay/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,11 +38,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PayController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="616">
               <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="41" column="49" lean-forward="true" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
+              <folding>
+                <element signature="e#40#83#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -218,8 +147,8 @@
         <option value="$PROJECT_DIR$/resources/views/Pay/index.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/Pay/pay.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PayController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
       </list>
     </option>
   </component>
@@ -326,7 +255,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/cashier" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="247" />
     <option name="y" value="-18" />
     <option name="width" value="1400" />
@@ -440,15 +369,16 @@
       <workItem from="1571792898805" duration="15000" />
       <workItem from="1571794082566" duration="13858000" />
       <workItem from="1571879791882" duration="3462000" />
-      <workItem from="1571965445901" duration="1822000" />
+      <workItem from="1571965445901" duration="1830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175367000" />
+    <option name="totallyTimeSpent" value="175375000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14658849" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -833,16 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BankCardController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -861,6 +781,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
           <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="41" column="49" lean-forward="true" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
+          <folding>
+            <element signature="e#40#83#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
